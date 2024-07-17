@@ -54,13 +54,13 @@ class OrderInfoWidget extends StatelessWidget {
                       const Text('2024-07-01-',
                         style: TextStyle(
                             color: AppColors.textBlackColor,
-                            fontSize: 10.0,
+                            fontSize: 9.0,
                             fontWeight: FontWeight.w500
                         ),),
                       const Text('2024-07-16',
                         style: TextStyle(
                             color: AppColors.textBlackColor,
-                            fontSize: 10.0,
+                            fontSize: 9.0,
                             fontWeight: FontWeight.w500
                         ),),
 

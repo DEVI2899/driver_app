@@ -43,13 +43,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
               }
               else if (state is LoginFailure) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(state.error)),
-                );
+                return const Center(child: Padding(
+                  padding: EdgeInsets.all(50.0),
+                  child: Text('Invalid email and password', style: TextStyle(color: AppColors.whiteColor),),
+                ), );
               }
-                   return Column(
-              children: [
-              Container(
+              return Column(
+               children: [
+                   Container(
                 color: AppColors.blueColor,
                 height: height * 0.15,
                ),
