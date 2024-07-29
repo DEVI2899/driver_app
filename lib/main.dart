@@ -14,7 +14,6 @@ void main() {
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -27,7 +26,6 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider(create: (context) =>LoginBloc(loginService: loginService)),
         BlocProvider(create: (context) =>OrderDetailsBloc(loginService: loginService))
-
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

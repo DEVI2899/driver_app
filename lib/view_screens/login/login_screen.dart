@@ -21,6 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+
+
   @override
   Widget build(BuildContext context) {
     final loginBloc = BlocProvider.of<LoginBloc>(context);
@@ -43,18 +45,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
               }
               else if (state is LoginFailure) {
-                return const Center(child: Padding(
-                  padding: EdgeInsets.all(50.0),
-                  child: Text('Invalid email and password', style: TextStyle(color: AppColors.whiteColor),),
-                ), );
+
               }
-              return Column(
-               children: [
+               return Column(
+                children: [
                    Container(
-                color: AppColors.blueColor,
-                height: height * 0.15,
+                     color: AppColors.blueColor,
+                     height: height * 0.15,
                ),
-                Container(
+                   Container(
                   height: height *0.85,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -98,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                ),
                                SizedBox(height: height * 0.01,),
                                TextFormField(
-
+                                 keyboardType: TextInputType.text,
                                  controller: _emailController,
                                  validator: (value) {
                                    if (value == null || value.isEmpty) {
@@ -135,6 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                ),
                                SizedBox(height: height * 0.01,),
                                TextFormField(
+                                 keyboardType: TextInputType.text,
                                  controller: _passwordController,
                                  validator: (value) {
                                    if (value == null || value.isEmpty) {
@@ -167,14 +167,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                          LoginButtonPressed(email: _emailController.text,
                                              password: _passwordController.text)
                                      );
-
-
-
                                  }
                                  else {
                                    ScaffoldMessenger.of(context).showSnackBar(
                                        const SnackBar(
-                                           content: Text('login failed',
+                                           content: Text('Invalid username or password',
                                                style: TextStyle(
                                                    color: AppColors.whiteColor)
                                            )
@@ -198,11 +195,11 @@ class _LoginScreenState extends State<LoginScreen> {
                            ),
                          ),
                         )
-                   )
-                 ]
+                    )
+                   ]
                   );
-                       },
-                    ),
+              },
+        ),
 
                   ),
               );

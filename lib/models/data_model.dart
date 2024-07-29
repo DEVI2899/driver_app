@@ -1,5 +1,4 @@
 
-
 class DataModel{
   final String firstName;
   final String lastName;

@@ -5,6 +5,7 @@ import 'package:task_tarkiz/widgets/order_info_widget.dart';
 import '../../Bloc/order_bloc/order_bloc.dart';
 import '../../Bloc/order_bloc/order_event.dart';
 import '../../Bloc/order_bloc/order_state.dart';
+import '../../widgets/custom_appbar.dart';
 
 
 class OrderHistory extends StatelessWidget {
@@ -17,25 +18,14 @@ class OrderHistory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     final orderDetailsBloc = BlocProvider.of<OrderDetailsBloc>(context)
       ..add(FetchOrderDetails(driverId: driverId, fromDate: fromDate, toDate: toDate));
 
     return Scaffold(
       backgroundColor: AppColors.blueColor,
-      appBar: AppBar(
-        backgroundColor:AppColors.blueColor ,
-        leading: IconButton(
-          onPressed: () {
-          Navigator.of(context).pop();
-        },
-          icon: const Icon(Icons.arrow_back_ios, color: AppColors.whiteColor,),
-        ),
-        title: const Text("Order History",
-          style: TextStyle(
-            color:AppColors.whiteColor,
-            fontWeight: FontWeight.w600,
-            fontSize: 18.0,
-          ),),
+      appBar: CustomAppBar(
+        height: height * 0.14,
       ),
       body:  BlocBuilder<OrderDetailsBloc, OrderDetailsState>(
         builder: (context, state) {

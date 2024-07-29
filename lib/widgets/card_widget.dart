@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+
+
 import '../utils/appcolors.dart';
 
-class CardWidget extends StatelessWidget {
+class CardWidget extends StatefulWidget {
   const CardWidget({super.key});
+
+  @override
+  State<CardWidget> createState() => _CardWidgetState();
+}
+
+class _CardWidgetState extends State<CardWidget> {
 
   @override
   Widget build(BuildContext context) {
@@ -278,6 +286,8 @@ class CardWidget extends StatelessWidget {
             ) ,
           ),
         ),
+
+
       ],
     );
   }

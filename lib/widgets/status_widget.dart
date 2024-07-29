@@ -82,7 +82,6 @@ class _StatusWidgetState extends State<StatusWidget> {
               ),
             ),
             SizedBox(height:  height *0.02,),
-
             const CardWidget(),
 
 

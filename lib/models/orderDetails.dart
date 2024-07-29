@@ -1,5 +1,4 @@
 
-import 'dart:convert';
 
 class OrderDetails {
   final int statusCode;
